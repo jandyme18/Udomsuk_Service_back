@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
+require('dotenv').config();
 
 mongoose.set('autoIndex', true);
-mongoose.connect('mongodb+srv://jandyme18:250608@udomsukservice.vc0c6.mongodb.net/udomDB',
+mongoose.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@udomsukservice.vc0c6.mongodb.net/${process.env.DB_NAME}`,
     {
         useNewUrlParser: true,
         useUnifiedTopology: true,

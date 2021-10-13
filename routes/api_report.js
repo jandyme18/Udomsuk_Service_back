@@ -20,4 +20,9 @@ router.post("/", async (req, res) => {
     res.json(doc);
 });
 
+router.get("/:track_id", async (req, res) => {
+    const doc = await Report.find({ track_id: req.params.track_id });
+    res.json(doc);
+});
+
 module.exports = router;

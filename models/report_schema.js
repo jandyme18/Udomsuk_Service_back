@@ -13,6 +13,6 @@ const reportSchema = mongoose.Schema({
     tel:String,
     repair:[String],
     change:[String]
-},{_id : false});
+},{_id : false , versionKey: false});
 
 module.exports = mongoose.model('reports', reportSchema)
