@@ -7,7 +7,7 @@ const crypto = require("crypto");
 router.get('/', async (req, res) => {
     const doc = await Report.find({});
     res.json(doc);
-})
+});
 
 router.post("/", async (req, res) => {
     console.log(JSON.stringify(req.body));

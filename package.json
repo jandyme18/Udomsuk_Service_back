@@ -1,8 +1,8 @@
 {
-  "name": "Final-Proj",
+  "name": "FinalProj",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -18,7 +18,7 @@
     "fs": "^0.0.1-security",
     "http": "^0.0.1-security",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^6.0.9",
+    "mongoose": "^6.0.14",
     "mongoose-sequence": "^5.3.1",
     "path": "^0.12.7"
   }

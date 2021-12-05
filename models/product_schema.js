@@ -2,7 +2,11 @@ const mongoose = require('mongoose');
 
 const productSchema = mongoose.Schema({
     _id: {type: mongoose.Schema.Types.ObjectId, auto: true },
-    
-},{_id : false , versionKey: false})
+    products_id:String,
+    products_name:String,
+    description:String,
+    price:Number,
+    status:Boolean
+},{_id : false , versionKey: false});
 
-module.exports = mongoose.model('products', reportSchema)
+module.exports = mongoose.model('products', productSchema)

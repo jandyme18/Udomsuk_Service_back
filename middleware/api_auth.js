@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
-const jwt = require('./jwt');
+const jwt = require('../routes/jwt');
 const Users = require('../models/user_schema');
 
 //register
@@ -41,6 +41,6 @@ router.post('/login', async (req, res) => {
     else{ 
         res.json({result: "failed", message: 'Invalid email'})
     }
-})
+});
 
 module.exports = router;
