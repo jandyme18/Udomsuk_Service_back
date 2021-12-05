@@ -7,6 +7,7 @@ const productSchema = mongoose.Schema({
     description:String,
     price:Number,
     status:Boolean
+    //status: true=unbook, false=booked
 },{_id : false , versionKey: false});
 
 module.exports = mongoose.model('products', productSchema)
