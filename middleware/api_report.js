@@ -11,8 +11,8 @@ router.get('/', async (req, res) => {
 
 router.post("/", async (req, res) => {
     console.log(JSON.stringify(req.body));
-    const trackingNumber = (pr = "UDS") => {
-        for(let i=0; i<8; i++) pr += ~~(Math.random() * 10);
+    const trackingNumber = (pr = "TID-") => {
+        for(let i=0; i<7; i++) pr += ~~(Math.random() * 10);
         return pr;
     };
     req.body.track_id = await trackingNumber()
