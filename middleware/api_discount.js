@@ -20,7 +20,7 @@ router.get("/:code/:productid", async (req, res) => {
     });
     const product = await Product.findOne({
         productid: parseInt(req.params.productid)
-    })
+    });
     if (code) {
         const discountMethod = product.price - (product.price * (code.amount / 100));
         res.json({
