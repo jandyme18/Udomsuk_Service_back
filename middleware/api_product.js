@@ -14,4 +14,25 @@ router.get("/:products_id", async (req, res) => {
     res.json(doc);
 });
 
+router.put("/update/:id", async (req, res) => {
+    const doc = new Product({
+        _id: req.params.id,
+        products_id: req.body.products_id,
+        products_name: req.body.products_name,
+        description: req.body.description,
+        price: req.body.price,
+        status: req.body.status
+    })
+
+    Product.updateOne({_id: req.params.id}, doc).then(() => {
+        res.status(200).json({
+            message: "Product updated successfully"
+        });
+    }).catch((err) => {
+        res.status(400).json({
+            error: err
+        })
+    });
+})
+
 module.exports = router;
