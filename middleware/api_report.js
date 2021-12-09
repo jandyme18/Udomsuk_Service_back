@@ -1,8 +1,6 @@
 const express = require('express');
-const mongoose = require('mongoose');
 const router = express.Router();
-const Report = require('../models/report_schema')
-const crypto = require("crypto");
+const Report = require('../models/report_schema');
 
 router.get('/', async (req, res) => {
     const doc = await Report.find({});
