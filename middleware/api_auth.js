@@ -10,10 +10,10 @@ router.post('/register', async (req, res) => {
         console.log(JSON.stringify(req.body));
         req.body.password = await bcrypt.hash(req.body.password, 10);
         const doc = await Users.create(req.body);
-        res.json({ result: "success", details: doc});
+        res.json({ result: "success", details: doc });
     }
-    catch (err) { 
-        res.json({ result: "error", details: err});
+    catch (err) {
+        res.json({ result: "error", details: err });
     }
 });
 
@@ -25,21 +25,28 @@ router.post('/login', async (req, res) => {
     if (doc) {
         const isPasswordValid = await bcrypt.compare(password, doc.password);
         if (isPasswordValid) {
-            const payload = { 
+            const payload = {
                 id: doc._id,
-                level: doc.level, 
-                username: doc.username, 
+                level: doc.level,
+                username: doc.username,
                 email: doc.email,
             };
             const token = jwt.sign(payload, "100h");
-            res.json({ result: "success", token, message: 'login success'});
+            res.json({
+                result: "success",
+                token,
+                message: 'login success',
+                username: payload.username,
+                level: payload.level,
+                email: payload.email
+            });
         }
-        else { 
-            res.json({result: "failed", message: 'Invalid password'})
+        else {
+            res.json({ result: "failed", message: 'Invalid password' })
         }
     }
-    else{ 
-        res.json({result: "failed", message: 'Invalid email'})
+    else {
+        res.json({ result: "failed", message: 'Invalid email' })
     }
 });
 
