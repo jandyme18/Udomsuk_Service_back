@@ -36,9 +36,13 @@ router.post('/login', async (req, res) => {
                 result: "success",
                 token,
                 message: 'login success',
-                username: payload.username,
-                level: payload.level,
-                email: payload.email
+                username: doc.username,
+                level: doc.level,
+                email: doc.email,
+                firstname: doc.firstname,
+                surname: doc.surname,
+                address: doc.address,
+                tel: doc.tel
             });
         }
         else {
