@@ -36,9 +36,7 @@ router.post('/login', async (req, res) => {
                 result: "success",
                 token,
                 message: 'login success',
-                username: payload.username,
-                level: payload.level,
-                email: payload.email
+                payload
             });
         }
         else {
