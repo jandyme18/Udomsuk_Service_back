@@ -19,3 +19,4 @@ module.exports = {
         return jwt.sign(payload, privateKEY, signOptions);
     },
 }
+

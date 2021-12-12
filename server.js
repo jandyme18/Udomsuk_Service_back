@@ -8,7 +8,6 @@ const cors = require('cors');
 var corsOptions = {
     origin: [
         "http://localhost:3000",
-        "http://localhost:12900",
         "http://suvarn.3bbddns.com:12900"
     ],
     optionsSuccessStatus: 200

@@ -10,7 +10,7 @@ const userSchema = new mongoose.Schema({
     tel: { type: 'string', default: null },
     level: { type: 'string', default: "customer" },
     created: { type: Date, default: Date.now },
-});
+},{_id : false , versionKey: false});
 
 userSchema.index({ email: 1 }, { unique: true });
 module.exports = mongoose.model('users', userSchema);
